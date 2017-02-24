@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A67F7786-78DA-4CB7-B8AC-35A52BF47C26}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharpViewCore</RootNamespace>
+    <AssemblyName>SharpViewCore</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <LangVersion>5</LangVersion>
+    <FileAlignment>8192</FileAlignment>
+    <DebugSymbols>true</DebugSymbols>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.RDPCOMAPILib">
+      <HintPath>..\SharpView\obj\Release\AxInterop.RDPCOMAPILib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Network\INetworkDevice.cs" />
+    <Compile Include="IRemoteServerSocket.cs" />
+    <Compile Include="Network\NetworkDevice.cs" />
+    <Compile Include="RemoteException.cs" />
+    <Compile Include="IRemoteDesktop2.cs" />
+    <Compile Include="IRemoteDesktop4.cs" />
+    <Compile Include="IRemoteDesktop5.cs" />
+    <Compile Include="IRemoteServer.cs" />
+    <Compile Include="IRemoteServer2.cs" />
+    <Compile Include="IRemoteServer3.cs" />
+    <Compile Include="IRemoteServer4.cs" />
+    <Compile Include="Network\NetworkLookup.cs" />
+    <Compile Include="Network\NetworkPingResult.cs" />
+    <Compile Include="RemoteApplication.cs" />
+    <Compile Include="RemoteControlLevel.cs" />
+    <Compile Include="RemoteDesktopComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RemoteChannelPriority.cs" />
+    <Compile Include="IRemoteDesktop.cs" />
+    <Compile Include="IRemoteDesktop3.cs" />
+    <Compile Include="Network\NetworkState.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoteDesktop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RemoteDesktopGuest.cs" />
+    <Compile Include="RemoteDesktopInvitation.cs" />
+    <Compile Include="RemoteServer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RemoteServerSocket.cs" />
+    <Compile Include="RemoteVirtualChannel.cs" />
+    <Compile Include="RemoteVirtualChannelFlags.cs" />
+    <Compile Include="Service\IServiceCommand.cs" />
+    <Compile Include="Service\ServiceCommand.cs" />
+    <Compile Include="Service\ServiceConsoleManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxMSTSCLib">
+      <Guid>{8C11EFA1-92C3-11D1-BC1E-00C04FA31489}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MSTSCLib">
+      <Guid>{8C11EFA1-92C3-11D1-BC1E-00C04FA31489}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="RDPCOMAPILib">
+      <Guid>{CC802D05-AE07-4C15-B496-DB9D22AA0A84}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IRemoteServer5.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
